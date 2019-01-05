@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45014DCD-16A1-421C-8984-94BF3E40C7B7}</ProjectGuid>
+    <ProjectGuid>{1C09A664-B0A1-4FB4-8EE3-02EF841DF647}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Matemeter</RootNamespace>
     <AssemblyName>Matemeter</AssemblyName>
@@ -62,15 +62,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Game\Session.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PlayerSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Numbers\ASMNumberRandomizer.cs" />
     <Compile Include="Numbers\DivideNumberRandomizer.cs" />
     <Compile Include="Numbers\NumberRandomizer.cs" />
+    <Compile Include="PlayerSelection.xaml.cs">
+      <DependentUpon>PlayerSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Players\IPlayersRepository.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\XMLPlayersRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,6 +99,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,6 +107,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\About.png" />
+    <Content Include="Resources\Sounds\ClickSound.wav" />
+    <Content Include="Resources\Sounds\LevelUp.wav" />
+    <Content Include="Resources\Sounds\TickTock.wav" />
+    <Content Include="Resources\Sounds\TrueBuzzer.wav" />
+    <Content Include="Resources\Sounds\WrongBuzzer.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

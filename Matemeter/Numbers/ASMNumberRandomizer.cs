@@ -18,12 +18,14 @@ namespace Matemater.Numbers
         /// Metoda losująca 2 lub 3 liczby, które dają wynik dodawania, odejmowania lub mnożenia.
         /// </summary>
         /// <param name="range">Parametr opisujący zakres losowanych liczb.</param>
-        public override void DrewAnswer(int range)
+        public override void DrewAnswer(int range, int level = 0)
         {
             this._answer.Clear();
 
             int number;
             int howMany = this._random.Next(this._min, this._max);
+            if (level == 3)
+                howMany = 2;
             for(int i = 1; i <= howMany; i++)
             {
                 number = this._random.Next(range);

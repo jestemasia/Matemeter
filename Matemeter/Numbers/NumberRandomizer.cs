@@ -76,7 +76,7 @@ namespace Matemater.Numbers
         /// Losuje liczby dające poprawną odpowiedź.
         /// </summary>
         /// <param name="range">Parametr określający zakres losowanych liczb.</param>
-        public abstract void DrewAnswer(int range);    
+        public abstract void DrewAnswer(int range, int level = 0);    
        
         /// <summary>
         /// Tasuje zbiór liczb.
@@ -96,9 +96,9 @@ namespace Matemater.Numbers
         /// Metoda losująca nowe liczby do gry.
         /// </summary>
         /// <param name="range">Parametr określający zakres losowanych liczb.</param>
-        public void ActualizeNumbers(int range)
+        public void ActualizeNumbers(int range, int level = 0)
         {
-            this.DrewAnswer(range);
+            this.DrewAnswer(range, level);
             this.DrawRandomNumbers(range);
             this.ShuffleNumbers();
         }
