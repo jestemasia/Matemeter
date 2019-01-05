@@ -15,7 +15,7 @@ namespace Matemater.Numbers
         /// Losuje liczby tworzące poprawną odpowiedź.
         /// </summary>
         /// <param name="range">Określa zakres losowanych liczb.</param>
-        public override void DrewAnswer(int range)
+        public override void DrewAnswer(int range, int level = 0)
         {
             this._answer.Clear();
 

@@ -1,0 +1,34 @@
+C:\Users\Ada\Desktop\Matemeter\Matemeter\bin\Debug\Matemeter.exe.config
+C:\Users\Ada\Desktop\Matemeter\Matemeter\bin\Debug\Matemeter.exe
+C:\Users\Ada\Desktop\Matemeter\Matemeter\bin\Debug\Matemeter.pdb
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.csprojResolveAssemblyReference.cache
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\MainWindow.baml
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\PlayerSelection.baml
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\MainWindow.g.cs
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\PlayerSelection.g.cs
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\App.g.cs
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter_Content.g.cs
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter_MarkupCompile.cache
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.g.resources
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.Properties.Resources.resources
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.csproj.GenerateResource.cache
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.csproj.CoreCompileInputs.cache
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.exe
+C:\Users\Ada\Desktop\Matemeter\Matemeter\obj\Debug\Matemeter.pdb
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\bin\Debug\Matemeter.exe.config
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\bin\Debug\Matemeter.exe
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\bin\Debug\Matemeter.pdb
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.csprojResolveAssemblyReference.cache
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\MainWindow.baml
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\PlayerSelection.baml
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\MainWindow.g.cs
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\PlayerSelection.g.cs
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\App.g.cs
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter_Content.g.cs
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter_MarkupCompile.cache
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.g.resources
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.Properties.Resources.resources
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.csproj.GenerateResource.cache
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.csproj.CoreCompileInputs.cache
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.exe
+C:\różne\PROJEKTY JPWP\Matemeter\Matemeter\obj\Debug\Matemeter.pdb

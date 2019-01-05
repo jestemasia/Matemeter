@@ -9,7 +9,7 @@ using System.Windows;
 namespace Matemeter
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Logika klasy App
     /// </summary>
     public partial class App : Application
     {

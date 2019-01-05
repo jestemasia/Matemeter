@@ -1,12 +1,238 @@
-﻿<Window x:Class="Matemeter.MainWindow"
+﻿<Window x:Class="Matemater.MainWindow"
+        WindowStartupLocation="CenterScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Matemeter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        FontFamily="Comic Sans MS"
+        Icon="./Resources/Images/logo.png"
+        Background="#e5de95"
+        Closing="Window_Closing"
+        Padding="50px 50px 50px 50px"
+        Title="Matemeter" Width ="850" Height="500" MinHeight="500" MinWidth="850">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="backgroundColor">#e5de95</SolidColorBrush>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style x:Key="numberStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Width" Value="65px"/>
+            <Setter Property="Height" Value="65px"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
+
+        <Style x:Key="equationStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="29"/>
+            <Setter Property="Width" Value="65px"/>
+            <Setter Property="Height" Value="65px"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Background" Value="Beige"/>
+        </Style>
+
+        <Style x:Key="timerStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="Background" Value="{StaticResource backgroundColor}"/>
+            <Setter Property="Width" Value="150px"/>
+            <Setter Property="Height" Value="150px"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="redButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5, 5, 5, 5" BorderBrush="Red" BorderThickness="2px" >
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3"/>
+                            </Border.Effect>
+                            <Button x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Width="150px"
+                                              Height="50px"
+                                              Background="#e5de95"
+                                              Content="{TemplateBinding Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="greenButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5, 5, 5, 5" BorderBrush="Green" BorderThickness="2px" >
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3"/>
+                            </Border.Effect>
+                            <Button x:Name="contentPresenter" 
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Width="150px"
+                                              Height="50px"
+                                              Background="#e5de95"
+                                              Content="{TemplateBinding Content}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+    </Window.Resources>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="127*"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="141*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="GRACZ" Grid.Row="0" Grid.Column="0" Style="{StaticResource labelStyle}" Grid.ColumnSpan="2" />
+                <Label Content="{Binding Name}" Grid.Row="0" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <Label Content="POZIOM" Grid.Row="1" Grid.Column="0" Style="{StaticResource labelStyle}" Grid.ColumnSpan="2"/>
+                <Label Content="{Binding Level}" Grid.Row="1" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+                <Label Content="PUNKTY" Grid.Row="2" Grid.Column="0" Style="{StaticResource labelStyle}" Grid.ColumnSpan="2"/>
+                <Label Content="{Binding Score}" Grid.Row="2" Grid.Column="2" Style="{StaticResource labelStyle}"/>
+
+            </Grid>
+
+            <Border Grid.Column="1">
+
+                <Label Name="tbTime" Content="{Binding TimeLeft }"
+                     Grid.Column="1"
+                     BorderThickness="0"
+                     RenderTransformOrigin="0.528,0.424"
+                     Style="{StaticResource timerStyle}"/>
+            </Border>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
         
+                    <Button Content="NOWA GRA"
+                        Name="newGame"
+                        Grid.Row="0"
+                        Style="{StaticResource redButton}"
+                        Height="50px"
+                        Width="150px"
+                        Background="#d8481c"
+                        FontSize="20"
+                        Click="newGame_Click"/>
+                
+                <Button Content="SPRAWDŹ"
+                        Grid.Row="1"
+                        Name="Chceck"
+                        Height="50px"
+                        Width="150px"
+                        FontSize="20"
+                        Background="#74a02c"
+                        Style="{StaticResource greenButton}"
+                        Click="Chceck_Click"/>
+            </Grid>
+
+        </Grid>
+
+        <ListBox AllowDrop="True"    
+                 Drop="ListBox_Drop"
+                 Background="{StaticResource backgroundColor}"
+                 BorderThickness="0"
+                 Name="lbEquation"
+                 Grid.Row="1"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 GiveFeedback="Label_GiveFeedback">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Beige" BorderThickness="2px" CornerRadius="5, 5, 5, 5">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="4"/>
+                        </Border.Effect>
+                        <Label Content="{Binding}"
+                           Style="{StaticResource equationStyle}"
+                           GiveFeedback="Label_GiveFeedback"/>
+                    </Border>
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel VerticalAlignment="Center"
+                               HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+        </ListBox>
+
+        <ListBox PreviewMouseLeftButtonDown="NumbersList_PreviewMouseLeftButtonDown"
+                 Name="lbNumbers"
+                 Background="{StaticResource backgroundColor}"
+                 BorderThickness="0"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 Grid.Row ="2"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 GiveFeedback="Label_GiveFeedback">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal"
+                               IsItemsHost="True"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Beige" BorderThickness="2px" CornerRadius="5, 5, 5, 5">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="3"/>
+                        </Border.Effect>
+                        <Label Content="{Binding}"
+                           Style="{StaticResource numberStyle}"/>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

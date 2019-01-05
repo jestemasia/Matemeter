@@ -1,0 +1,136 @@
+﻿<Window x:Class="Matemater.PlayerSelection"
+        ShowInTaskbar="False"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="PaleGoldenrod"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="False"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Padding="50px, 50px, 50px, 50px"
+        SizeToContent="Height"
+        FontFamily="Comic Sans MS"
+        Icon=".\Resources\Images\logo.png"
+        Title="Matemeter" Width ="850" Height="500" MinHeight="500" MinWidth="850">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Name="imgLogo" Width="70px" Height="70px" Margin="20px 10px"/>
+            <Label 
+               Content="Matemeter"
+               FontSize="70"
+               FontWeight="Bold"
+               Foreground="Red"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid AutoGenerateColumns="False" 
+                  BorderThickness="0"
+                  Name="usersGrid"
+                  CanUserAddRows="False"
+                  Grid.Column="0" 
+                  FontSize="16px"
+                  ItemsSource="{Binding Players}"
+                  Background="PaleGoldenrod"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  Width="430px" MaxHeight="290px" >
+
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="Beige"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridRowHeader}">
+                        <Setter Property="Background" Value="Beige"/>
+                    </Style>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="Gray"/>
+                    </Style>
+                    <Style TargetType="{x:Type Button}" x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}">
+                        <Setter Property="Background" Value="Black" />
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn IsReadOnly="True" 
+                                        Header="Imię"
+                                        Binding="{Binding Name}"
+                                        Width="1*"/>
+                    <DataGridTextColumn IsReadOnly="True" 
+                                        Header="Najlepszy wynik"
+                                        Binding="{Binding BestScore}" 
+                                        Width="1*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Vertical" Grid.Column="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+
+                <Label Content="Podaj imię: " HorizontalContentAlignment="Center" FontSize="16px" Margin="0px 30px 0px 0px"/>
+
+                <TextBox Name="userName" 
+                         Width="150px" 
+                         BorderThickness="0" 
+                         FontSize="16px"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"/>
+
+                <Border BorderBrush="Beige" BorderThickness="2px" CornerRadius="5, 5, 5, 5" Margin="10px">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="3"/>
+                    </Border.Effect>
+                    <Button Grid.Column="1" 
+                    Name="newUser"
+                    FontSize="15px"
+                    BorderThickness="0"
+                    Background="Beige"
+                    Content="Dodaj użytkownika"
+                    Width="150px" Height="50px"
+                    Click="newUser_Click"/>
+                </Border>
+
+                <Border BorderBrush="Beige" BorderThickness="2px" CornerRadius="5, 5, 5, 5" Margin="10px 40px 10px 10px">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="3"/>
+                    </Border.Effect>
+                    <Button Grid.Column="2" 
+                    Name="start"    
+                    Background="Beige"
+                    BorderThickness="0"
+                    FontSize="20"
+                    Content="START"
+                    Width="150px" Height="50px"
+                    Click="start_Click"/>
+                </Border>
+                <Border BorderBrush="Beige" BorderThickness="2px" CornerRadius="5, 5, 5, 5" Margin="10px">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="3"/>
+                    </Border.Effect>
+                    <Button Grid.Column="2" 
+                    Name="close"    
+                    Background="Beige"
+                    BorderThickness="0"
+                    FontSize="20"
+                    Content="WYJDŹ"
+                    Click="close_Click"
+                    Width="150px" Height="50px"/>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
